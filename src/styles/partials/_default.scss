@@ -2,9 +2,10 @@
 	background-color: #f3f4f6;
 
 	#wpcontent {
-		padding: 0px;
+		padding: 0;
 	}
 
+	/* stylelint-disable-next-line selector-class-pattern */
 	.Toastify__toast-container.Toastify__toast-container--top-right {
 		top: 3em;
 	}

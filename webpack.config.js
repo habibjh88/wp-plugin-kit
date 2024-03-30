@@ -47,10 +47,9 @@ module.exports = {
 			'@data': path.resolve( __dirname, './src/data' ),
 			'@interfaces': path.resolve( __dirname, './src/interfaces' ),
 			'@components': path.resolve( __dirname, './src/components' ),
-			'@utils': path.resolve( __dirname, './src/utils' ),
 			'@pages': path.resolve( __dirname, './src/pages' ),
 		},
-		extensions: [ '.tsx', '.ts', '.jsx', '.js', '.json' ],
+		extensions: [ '.tsx', '.ts', '.jsx', '.js' ],
 	},
 	externals: {
 		wpPluginKitI18nLoader: [ 'window', 'wpPluginKitI18nLoader' ],

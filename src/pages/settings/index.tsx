@@ -32,8 +32,7 @@ const Settings = () => {
 
 	useEffect( () => {
 		if ( data ) {
-			const { form } = data;
-			dispatch( { type: 'set_form', payload: form } );
+			dispatch( { type: 'set_form', payload: data.form } );
 		}
 	}, [ data ] );
 

@@ -22,10 +22,49 @@
 		"skipLibCheck": true /* Skip type checking all .d.ts files. */,
 		"baseUrl": "./",
 		"paths": {
-			"@*": [ "src/*" ]
+			"@/*": [
+				"src/*"
+			],
+			"@assets/*": [
+				"src/assets/*"
+			],
+			"@styles/*": [
+				"src/styles/*"
+			],
+			"@utils/*": [
+				"src/utils/*"
+			],
+			"@data/*": [
+				"src/data/*"
+			],
+			"@interfaces/*": [
+				"src/interfaces/*"
+			],
+			"@components/*": [
+				"src/components/*"
+			],
+			"@pages/*": [
+				"src/pages/*"
+			]
 		}
 	},
-	"include": [ "src" ],
-	"files": [ "globals.d.ts" ],
-	"exclude": [ "node_modules", "build" ]
+	"include": [
+		"src/**/*"
+	],
+	"resolveJsonModule": true,
+	"resolve": {
+		"extensions": [
+			".tsx",
+			".ts",
+			".jsx",
+			".js"
+		]
+	},
+	"files": [
+		"globals.d.ts"
+	],
+	"exclude": [
+		"node_modules",
+		"build"
+	]
 }

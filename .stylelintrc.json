@@ -1,0 +1,7 @@
+{
+    "extends": "@wordpress/stylelint-config",
+    "rules": {
+        "string-quotes": null
+    },
+    "customSyntax": "postcss-scss"
+}

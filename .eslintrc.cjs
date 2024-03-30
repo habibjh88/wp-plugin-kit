@@ -1,6 +1,6 @@
 module.exports = {
   "extends": [
-    "plugin:@wordpress/eslint-plugin/recommended"
+    "plugin:@wordpress/eslint-plugin/recommended",
   ],
   "rules": {
     "prettier/prettier": [
@@ -26,5 +26,13 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  settings: {
+    "import/extensions": [
+      ".tsx",
+			".ts",
+			".jsx",
+			".js"
+    ]
+  },
 }
