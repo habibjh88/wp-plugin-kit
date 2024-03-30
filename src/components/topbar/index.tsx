@@ -1,11 +1,9 @@
-import { FC, ReactNode } from 'react';
-
 interface Props {
 	label: string;
-	children: ReactNode;
+	children: any;
 }
 
-const Topbar: FC< Props > = ( { label, children } ) => {
+const Topbar = ( { label, children }: Props ) => {
 	return (
 		<div className="wp-plugin-kit-topbar">
 			<div className="wp-plugin-kit-topbar-content flex justify-between items-center">

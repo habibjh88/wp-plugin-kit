@@ -1,11 +1,9 @@
-import {FC, ReactNode } from 'react';
-
 interface Props {
 	className?: string;
-	children: ReactNode;
+	children: any;
 }
 
-const PageContent: FC< Props > = ( { className = '', children } ) => {
+const PageContent = ( { className = '', children }: Props ) => {
 	return (
 		<div className={ `wp-plugin-kit-content ${ className }` }>
 			{ children }

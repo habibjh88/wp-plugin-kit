@@ -13,8 +13,8 @@ import { createHashRouter } from 'react-router-dom';
 /**
  * Internal dependencies
  */
-const Settings = lazy( () => import( '@pages/settings' ) );
-import NotFound from '@pages/404';
+const Settings = lazy( () => import( '@/pages/settings' ) );
+import NotFound from '@/pages/404';
 
 const Router = createHashRouter( [
 	{

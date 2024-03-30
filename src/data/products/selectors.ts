@@ -2,7 +2,7 @@
  * Internal dependencies.
  */
 
-import { CrudState } from '@interfaces';
+import { CrudState } from '@/interfaces';
 
 const selectors = {
 	getForm( state: CrudState ) {

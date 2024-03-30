@@ -9,15 +9,15 @@
  */
 import { StrictMode, createRoot } from '@wordpress/element';
 import { QueryClientProvider } from '@tanstack/react-query';
-import { queryClient } from '@utils/react-query';
+import { queryClient } from '@/utils/react-query';
 
 /**
  * Internal dependencies
  */
-import '@data/store';
+import '@/data/store';
 import App from './App';
-import '@styles/main.scss';
-import '@utils/admin-menu';
+import '@/styles/main.scss';
+import '@/utils/admin-menu';
 
 const rootElement = document.getElementById( 'wp-plugin-kit' );
 if ( rootElement ) {

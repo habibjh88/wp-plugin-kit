@@ -2,8 +2,8 @@
  * Internal dependencies.
  */
 
-import { IResponse } from '@interfaces';
-import { IProduct } from '@interfaces/product';
+import { IResponse } from '@/interfaces';
+import { IProduct } from '@/interfaces/product';
 import { endpoint } from './endpoint';
 import { defaultForm } from './default-state';
 import { ACTION_TYPES } from './types';

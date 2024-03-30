@@ -3,19 +3,19 @@
 	"description": "A starter plugin for WordPress that provides a foundational structure to build upon.",
 	"version": "0.1.0",
 	"type": "wordpress-plugin",
-    "license": "GPL-2.0-or-later",
-    "authors": [
-        {
-            "name": "WpPluginKit",
-            "email": "therakib7@gmail.com"
-        }
-    ],
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/therakib7/wp-plugin-kit.git"
-        }
-    ],
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "WpPluginKit",
+			"email": "therakib7@gmail.com"
+		}
+	],
+	"repositories": [
+		{
+			"type": "git",
+			"url": "https://github.com/therakib7/wp-plugin-kit.git"
+		}
+	],
 	"require": {
 		"php": "^7.4 || ^8.0"
 	},

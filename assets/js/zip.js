@@ -53,9 +53,11 @@ exec(
 				fs.copySync( `composer.json`, `${ dest }/composer.json` );
 			}
 		} catch ( err ) {
+			// eslint-disable-next-line no-console
 			console.error( err );
 		}
 
+		// eslint-disable-next-line no-console
 		console.log( `Finished copying files.` );
 
 		asyncExec(
@@ -64,6 +66,7 @@ exec(
 				cwd: dest,
 			},
 			() => {
+				// eslint-disable-next-line no-console
 				console.log(
 					`Installed composer packages in ${ dest } directory.`
 				);
@@ -97,6 +100,7 @@ exec(
 					}
 				);
 
+				// eslint-disable-next-line no-console
 				console.log( `Making zip file ${ zipFile }...` );
 
 				asyncExec(
@@ -109,6 +113,7 @@ exec(
 							fs.removeSync( `${ dest }/${ file }` );
 						} );
 						fs.removeSync( `${ dest }/vendor` );
+						// eslint-disable-next-line no-console
 						console.log(
 							chalk.green(
 								`${ zipFile } is ready inside ${ dest } folder.`
@@ -116,16 +121,20 @@ exec(
 						);
 					}
 				).catch( ( error ) => {
+					// eslint-disable-next-line no-console
 					console.log( chalk.red( `Could not make ${ zipFile }.` ) );
+					// eslint-disable-next-line no-console
 					console.log( error );
 				} );
 			}
 		).catch( ( error ) => {
+			// eslint-disable-next-line no-console
 			console.log(
 				chalk.red(
 					`Could not install composer in ${ dest } directory.`
 				)
 			);
+			// eslint-disable-next-line no-console
 			console.log( error );
 		} );
 	}

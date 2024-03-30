@@ -44,8 +44,8 @@ const initializeAdminMenu = () => {
 	// On click active
 	for ( let y = 0, l = navUl.length; y < l; y++ ) {
 		navUl[ y ].addEventListener( 'click', function () {
-			for ( let y = 0, l = navUl.length; y < l; y++ ) {
-				navUl[ y ].classList.remove( 'current' );
+			for ( let x = 0; x < l; x++ ) {
+				navUl[ x ].classList.remove( 'current' );
 			}
 			this.classList.add( 'current' );
 		} );

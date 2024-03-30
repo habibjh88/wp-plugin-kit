@@ -1,8 +1,8 @@
 /**
  * Internal dependencies.
  */
-import { CrudState } from '@interfaces';
-import { IProduct } from '@interfaces/product';
+import { CrudState } from '@/interfaces';
+import { IProduct } from '@/interfaces/product';
 
 export const defaultForm: IProduct = {
 	id: null,

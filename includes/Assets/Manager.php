@@ -80,7 +80,7 @@ class Manager {
         return [
             'wp-plugin-kit-app' => [
                 'src'     => WP_PLUGIN_KIT_BUILD . '/index.css',
-                'version' => OZOPANEL_VERSION,
+                'version' => WP_PLUGIN_KIT_VERSION,
                 'deps'    => [],
             ],
         ];

@@ -5,7 +5,7 @@ import actions from './actions';
 
 import { endpoint } from './endpoint';
 
-import { IResponse } from '@interfaces';
+import { IResponse } from '@/interfaces';
 
 import { prepareItemForSubmit } from './utils';
 

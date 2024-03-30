@@ -1,4 +1,4 @@
-import { State, Form } from '@interfaces/settings';
+import { State, Form } from '@/interfaces/settings';
 
 type Action =
 	| { type: 'set_isLoading'; payload: boolean }

@@ -1,0 +1,36 @@
+{
+	"extends": [ "plugin:@wordpress/eslint-plugin/recommended" ],
+	"plugins": [ "import" ],
+	"rules": {
+		"prettier/prettier": [
+			"error",
+			{
+				"endOfLine": "auto",
+				"parenSpacing": true,
+				"tabWidth": 4,
+				"useTabs": true,
+				"singleQuote": true,
+				"trailingComma": "es5",
+				"bracketSpacing": true,
+				"jsxBracketSameLine": false,
+				"semi": true,
+				"arrowParens": "always"
+			}
+		],
+		"import/no-unresolved": "error",
+		"@wordpress/i18n-text-domain": [
+			"error",
+			{
+				"allowedTextDomain": [ "wp-plugin-kit" ]
+			}
+		]
+	},
+	"settings": {
+		"import/parsers": {
+			"@typescript-eslint/parser": [ ".ts", ".tsx" ]
+		},
+		"import/resolver": {
+			"typescript": {}
+		}
+	}
+}

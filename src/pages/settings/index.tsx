@@ -9,10 +9,10 @@ import { __ } from '@wordpress/i18n';
 /**
  * Internal dependencies
  */
-import Spinner from '@components/preloader/spinner';
-import Topbar from '@components/topbar';
-import PageContent from '@components/page-content';
-import { get, add } from '@utils/api';
+import Spinner from '@/components/preloader/spinner';
+import Topbar from '@/components/topbar';
+import PageContent from '@/components/page-content';
+import { get, add } from '@/utils/api';
 import { reducer, initialState } from './reducer';
 
 /**
@@ -86,7 +86,9 @@ const Settings = () => {
 				{ ! isLoading && (
 					<div className="wp-plugin-kit-settings wp-plugin-kit-form">
 						<div className="wp-plugin-kit-field">
-							<label>{ __( 'Layout', 'wp-plugin-kit' ) }</label>
+							<label htmlFor="layout">
+								{ __( 'Layout', 'wp-plugin-kit' ) }
+							</label>
 							<div className="wp-plugin-kit-field-img-switch">
 								<button
 									type="button"
@@ -124,7 +126,9 @@ const Settings = () => {
 						</div>
 
 						<div className="wp-plugin-kit-field">
-							<label>{ __( 'Position', 'wp-plugin-kit' ) }</label>
+							<label htmlFor="position">
+								{ __( 'Position', 'wp-plugin-kit' ) }
+							</label>
 							<div className="wp-plugin-kit-field-button-switch">
 								<button
 									type="button"
@@ -156,7 +160,7 @@ const Settings = () => {
 						</div>
 
 						<div className="wp-plugin-kit-field">
-							<label>
+							<label htmlFor="close_after">
 								{ __(
 									'Close After (Seconds)',
 									'wp-plugin-kit'
