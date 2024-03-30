@@ -11,4 +11,4 @@ import itemStore from './products';
 /**
  * Register stores.
  */
-register(itemStore);
+register( itemStore );

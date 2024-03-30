@@ -1,22 +1,19 @@
 /**
  * Internal dependencies.
  */
-import { IItem } from '@interfaces';
+import { IProduct } from '@interfaces/product';
 
-export const prepareItemForSubmit = (item: IItem) => {
-    const data = {
-        ...item,
-        type_id: item.type_id,
-    };
+export const prepareItemForSubmit = ( item: IProduct ) => {
+	const data = {
+		...item,
+		category_ids: item.category_ids,
+	};
 
-    if (item.is_active !== undefined) {
-        data.is_active = item.is_active;
-    } else {
-        data.is_active = 1;
-    }
+	if ( item.is_active !== undefined ) {
+		data.is_active = item.is_active;
+	} else {
+		data.is_active = 1;
+	}
 
-    // Remove unnecessary data.
-    delete data.status;
-
-    return data;
+	return data;
 };

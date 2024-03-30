@@ -19,11 +19,11 @@ import App from './App';
 import '@styles/main.scss';
 import '@utils/admin-menu';
 
-const rootElement = document.getElementById('wp-plugin-kit');
-if (rootElement) {
-	createRoot(rootElement).render(
+const rootElement = document.getElementById( 'wp-plugin-kit' );
+if ( rootElement ) {
+	createRoot( rootElement ).render(
 		<StrictMode>
-			<QueryClientProvider client={queryClient}>
+			<QueryClientProvider client={ queryClient }>
 				<App />
 			</QueryClientProvider>
 		</StrictMode>

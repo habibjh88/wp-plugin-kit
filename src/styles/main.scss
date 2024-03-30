@@ -1,21 +1,20 @@
 /**
  * External CSS
  */
-@import "partials/tailwind";
+@import 'partials/tailwind';
 
 /**
  * Default CSS Override
  */
-@import "partials/default";
+@import 'partials/default';
 
 /**
  * Internal CSS
  */
 
 .wp-admin.wp-plugin-kit {
-
-    @import "partials/preloader";
-    @import "partials/form";
+    @import 'partials/preloader';
+    @import 'partials/form';
 
     .wp-plugin-kit-topbar {
         position: sticky;

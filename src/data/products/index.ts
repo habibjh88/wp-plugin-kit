@@ -12,12 +12,12 @@ import selectors from './selectors';
 import controls from './controls';
 import resolvers from './resolvers';
 
-const itemStore = createReduxStore('wp-plugin-kit/items', {
-    reducer,
-    actions,
-    selectors,
-    controls,
-    resolvers,
-});
+const productStore = createReduxStore( 'wp-plugin-kit/products', {
+	reducer,
+	actions,
+	selectors,
+	controls,
+	resolvers,
+} );
 
-export default itemStore;
+export default productStore;
