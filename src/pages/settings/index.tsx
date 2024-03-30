@@ -25,7 +25,7 @@ const Settings = () => {
 	const [ state, dispatch ] = useReducer( reducer, initialState );
 	const { isLoading, isSaving, form } = state;
 
-	const { data, isLoading } = useQuery( {
+	const { data } = useQuery( {
 		queryKey: [ 'settings' ],
 		queryFn: () => get( 'settings', 'tab=general' ),
 	} );
