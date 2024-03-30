@@ -13,10 +13,10 @@ import { createHashRouter } from 'react-router-dom';
 /**
  * Internal dependencies
  */
-const Settings = lazy(() => import('@pages/settings'));
+const Settings = lazy( () => import( '@pages/settings' ) );
 import NotFound from '@pages/404';
 
-const Router = createHashRouter([
+const Router = createHashRouter( [
 	{
 		path: '/',
 		element: <Settings />,
@@ -29,6 +29,6 @@ const Router = createHashRouter([
 		path: '*',
 		element: <NotFound />,
 	},
-]);
+] );
 
 export default Router;

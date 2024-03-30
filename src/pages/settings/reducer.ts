@@ -11,12 +11,12 @@ export const initialState: State = {
 	form: {
 		layout: 'one',
 		position: 'top',
-		close_after: 3
+		close_after: 3,
 	},
 };
 
-export const reducer = (state: State, action: Action): State => {
-	switch (action.type) {
+export const reducer = ( state: State, action: Action ): State => {
+	switch ( action.type ) {
 		case 'set_isLoading':
 			return { ...state, isLoading: action.payload };
 		case 'set_isSaving':

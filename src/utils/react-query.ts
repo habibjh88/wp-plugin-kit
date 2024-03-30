@@ -10,29 +10,29 @@ import { toast } from 'react-toastify';
  * @since 0.1.0
  */
 
-const onError = (error: Error | Error[]) => {
-	if (Array.isArray(error)) {
-		error.forEach((err) => {
-			toast.error(err.message);
-		});
+const onError = ( error: Error | Error[] ) => {
+	if ( Array.isArray( error ) ) {
+		error.forEach( ( err ) => {
+			toast.error( err.message );
+		} );
 	} else {
-		toast.error(error.message);
+		toast.error( error.message );
 	}
 };
 
-const queryClient = new QueryClient({
+const queryClient = new QueryClient( {
 	defaultOptions: {
 		queries: {
 			staleTime: Infinity,
 			retry: false,
 		},
 	},
-	queryCache: new QueryCache({
+	queryCache: new QueryCache( {
 		onError,
-	}),
-	mutationCache: new MutationCache({
+	} ),
+	mutationCache: new MutationCache( {
 		onError,
-	}),
-});
+	} ),
+} );
 
 export { queryClient };

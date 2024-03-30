@@ -5,14 +5,14 @@ interface Props {
 	children: ReactNode;
 }
 
-const Topbar: React.FC<Props> = ({ label, children }) => {
+const Topbar: React.FC< Props > = ( { label, children } ) => {
 	return (
 		<div className="wp-plugin-kit-topbar">
 			<div className="wp-plugin-kit-topbar-content flex justify-between items-center">
 				<h2 className="wp-plugin-kit-topbar-label text-gray-900">
-					{label}
+					{ label }
 				</h2>
-				<div className="wp-plugin-kit-topbar-action">{children}</div>
+				<div className="wp-plugin-kit-topbar-action">{ children }</div>
 			</div>
 		</div>
 	);

@@ -17,10 +17,10 @@ const App = () => {
 	return (
 		<>
 			<ToastContainer hideProgressBar />
-			<Suspense fallback={<Spinner />}>
+			<Suspense fallback={ <Spinner /> }>
 				<RouterProvider
-					router={Router}
-					fallbackElement={<NotFound />}
+					router={ Router }
+					fallbackElement={ <NotFound /> }
 				/>
 			</Suspense>
 		</>

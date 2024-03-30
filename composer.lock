@@ -426,7 +426,7 @@
             "type": "phpcodesniffer-standard",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0-or-later"
+                "LGPL-2.0-or-later-or-later"
             ],
             "authors": [
                 {
@@ -486,7 +486,7 @@
             "type": "phpcodesniffer-standard",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0-or-later"
+                "LGPL-2.0-or-later-or-later"
             ],
             "authors": [
                 {
@@ -543,7 +543,7 @@
             "type": "phpcodesniffer-standard",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0-or-later"
+                "LGPL-2.0-or-later-or-later"
             ],
             "authors": [
                 {
@@ -621,7 +621,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0-or-later"
+                "LGPL-2.0-or-later-or-later"
             ],
             "authors": [
                 {
@@ -705,7 +705,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0-or-later"
+                "LGPL-2.0-or-later-or-later"
             ],
             "authors": [
                 {

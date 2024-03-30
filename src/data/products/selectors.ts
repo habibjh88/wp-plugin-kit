@@ -5,84 +5,83 @@
 import { CrudState } from '@interfaces';
 
 const selectors = {
+	getForm( state: CrudState ) {
+		const { form } = state;
 
-    getForm(state: CrudState) {
-        const { form } = state;
+		return form;
+	},
 
-        return form;
-    },
+	getIsLoading( state: CrudState ) {
+		const { isLoading } = state;
 
-    getIsLoading(state: CrudState) {
-        const { isLoading } = state;
+		return isLoading;
+	},
 
-        return isLoading;
-    },
+	getIsSaving( state: CrudState ) {
+		const { isSaving } = state;
 
-    getIsSaving(state: CrudState) {
-        const { isSaving } = state;
+		return isSaving;
+	},
 
-        return isSaving;
-    },
+	getIsDeleting( state: CrudState ) {
+		const { isDeleting } = state;
 
-    getIsDeleting(state: CrudState) {
-        const { isDeleting } = state;
+		return isDeleting;
+	},
 
-        return isDeleting;
-    },
+	getCurrentPage( state: CrudState ) {
+		const { currentPage } = state;
 
-    getCurrentPage(state: CrudState) {
-        const { currentPage } = state;
+		return currentPage;
+	},
 
-        return currentPage;
-    },
+	getPerPage( state: CrudState ) {
+		const { perPage } = state;
 
-    getPerPage(state: CrudState) {
-        const { perPage } = state;
+		return perPage;
+	},
 
-        return perPage;
-    },
+	getItems( state: CrudState ) {
+		const { items } = state;
 
-    getItems(state: CrudState) {
-        const { items } = state;
+		return items;
+	},
 
-        return items;
-    },
+	getTotalItems( state: CrudState ) {
+		const { totalItems } = state;
 
-    getTotalItems(state: CrudState) {
-        const { totalItems } = state;
+		return totalItems;
+	},
 
-        return totalItems;
-    },
+	getTotalPages( state: CrudState ) {
+		const { totalPages } = state;
 
-    getTotalPages(state: CrudState) {
-        const { totalPages } = state;
+		return totalPages;
+	},
 
-        return totalPages;
-    },
+	getCurrentItem( state: CrudState ) {
+		const { currentItem } = state;
 
-    getCurrentItem(state: CrudState) {
-        const { currentItem } = state;
+		return currentItem;
+	},
 
-        return currentItem;
-    },
+	getSelectedItems( state: CrudState ) {
+		const { selectedItems } = state;
 
-    getSelectedItems(state: CrudState) {
-        const { selectedItems } = state;
+		return selectedItems;
+	},
 
-        return selectedItems;
-    },
+	getFilters( state: CrudState ) {
+		const { filters } = state;
 
-    getFilters(state: CrudState) {
-        const { filters } = state;
+		return filters;
+	},
 
-        return filters;
-    },
+	getErrors( state: CrudState ) {
+		const { errors } = state;
 
-    getErrors(state: CrudState) {
-        const { errors } = state;
-
-        return errors;
-    },
+		return errors;
+	},
 };
 
 export default selectors;

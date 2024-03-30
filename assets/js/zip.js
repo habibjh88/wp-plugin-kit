@@ -1,11 +1,11 @@
-const fs = require('fs-extra');
-const path = require('path');
-const { exec } = require('child_process');
-const util = require('util');
-const chalk = require('chalk');
-const _ = require('lodash');
+const fs = require( 'fs-extra' );
+const path = require( 'path' );
+const { exec } = require( 'child_process' );
+const util = require( 'util' );
+const chalk = require( 'chalk' );
+const _ = require( 'lodash' );
 
-const asyncExec = util.promisify(exec);
+const asyncExec = util.promisify( exec );
 
 const pluginFiles = [
 	'assets/',
@@ -15,7 +15,7 @@ const pluginFiles = [
 	'templates/',
 	'wp-plugin-kit.php',
 	'index.php',
-	'README.txt'
+	'README.txt',
 ];
 
 const removeFiles = [
@@ -28,7 +28,7 @@ const removeFiles = [
 const dest = `dist/`;
 const zipFile = `wp-plugin-kit.zip`;
 const allowedVendorFiles = {};
-fs.removeSync(`${dest}${zipFile}`);
+fs.removeSync( `${ dest }${ zipFile }` );
 
 exec(
 	'rm -rf versions && rm *.zip',
@@ -37,26 +37,26 @@ exec(
 	},
 	() => {
 		const composerFile = `composer.json`;
-		fs.removeSync(dest);
-		const fileList = [...pluginFiles];
-		fs.mkdirp(dest);
+		fs.removeSync( dest );
+		const fileList = [ ...pluginFiles ];
+		fs.mkdirp( dest );
 
-		fileList.forEach((file) => {
-			fs.copySync(file, `${dest}/${file}`);
-		});
+		fileList.forEach( ( file ) => {
+			fs.copySync( file, `${ dest }/${ file }` );
+		} );
 
 		// copy composer.json file
 		try {
-			if (fs.pathExistsSync(composerFile)) {
-				fs.copySync(composerFile, `${dest}/composer.json`);
+			if ( fs.pathExistsSync( composerFile ) ) {
+				fs.copySync( composerFile, `${ dest }/composer.json` );
 			} else {
-				fs.copySync(`composer.json`, `${dest}/composer.json`);
+				fs.copySync( `composer.json`, `${ dest }/composer.json` );
 			}
-		} catch (err) {
-			console.error(err);
+		} catch ( err ) {
+			console.error( err );
 		}
 
-		console.log(`Finished copying files.`);
+		console.log( `Finished copying files.` );
 
 		asyncExec(
 			'composer install --optimize-autoloader --no-dev',
@@ -65,68 +65,68 @@ exec(
 			},
 			() => {
 				console.log(
-					`Installed composer packages in ${dest} directory.`
+					`Installed composer packages in ${ dest } directory.`
 				);
 
-				removeFiles.forEach((file) => {
-					fs.removeSync(`${dest}/${file}`);
-				});
+				removeFiles.forEach( ( file ) => {
+					fs.removeSync( `${ dest }/${ file }` );
+				} );
 
 				// Put vendor files.
-				Object.keys(allowedVendorFiles).forEach(
-					(composerPackage) => {
+				Object.keys( allowedVendorFiles ).forEach(
+					( composerPackage ) => {
 						const packagePath = path.resolve(
-							`${dest}/vendor/${composerPackage}`
+							`${ dest }/vendor/${ composerPackage }`
 						);
 
-						if (!fs.existsSync(packagePath)) {
+						if ( ! fs.existsSync( packagePath ) ) {
 							return;
 						}
 
-						const list = fs.readdirSync(packagePath);
+						const list = fs.readdirSync( packagePath );
 						const deletables = _.difference(
 							list,
-							allowedVendorFiles[composerPackage]
+							allowedVendorFiles[ composerPackage ]
 						);
 
-						deletables.forEach((deletable) => {
+						deletables.forEach( ( deletable ) => {
 							fs.removeSync(
-								path.resolve(packagePath, deletable)
+								path.resolve( packagePath, deletable )
 							);
-						});
+						} );
 					}
 				);
 
-				console.log(`Making zip file ${zipFile}...`);
+				console.log( `Making zip file ${ zipFile }...` );
 
 				asyncExec(
-					`zip -r ${zipFile} ${dest} *`,
+					`zip -r ${ zipFile } ${ dest } *`,
 					{
 						cwd: dest,
 					},
 					() => {
-						fileList.forEach((file) => {
-							fs.removeSync(`${dest}/${file}`);
-						});
-						fs.removeSync(`${dest}/vendor`);
+						fileList.forEach( ( file ) => {
+							fs.removeSync( `${ dest }/${ file }` );
+						} );
+						fs.removeSync( `${ dest }/vendor` );
 						console.log(
 							chalk.green(
-								`${zipFile} is ready inside ${dest} folder.`
+								`${ zipFile } is ready inside ${ dest } folder.`
 							)
 						);
 					}
-				).catch((error) => {
-					console.log(chalk.red(`Could not make ${zipFile}.`));
-					console.log(error);
-				});
+				).catch( ( error ) => {
+					console.log( chalk.red( `Could not make ${ zipFile }.` ) );
+					console.log( error );
+				} );
 			}
-		).catch((error) => {
+		).catch( ( error ) => {
 			console.log(
 				chalk.red(
-					`Could not install composer in ${dest} directory.`
+					`Could not install composer in ${ dest } directory.`
 				)
 			);
-			console.log(error);
-		});
+			console.log( error );
+		} );
 	}
 );

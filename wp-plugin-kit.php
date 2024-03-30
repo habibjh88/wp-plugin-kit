@@ -19,8 +19,8 @@
  * Tested up to:      6.4
  * Text Domain:       wp-plugin-kit
  * Domain Path:       /languages
- * License: GPL3.0
- * License URI: https://www.gnu.org/licenses/gpl-3.0.html
+ * License: GPL-2.0-or-later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
 /**

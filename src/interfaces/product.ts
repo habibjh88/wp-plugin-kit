@@ -1,61 +1,60 @@
-
 export interface IProduct {
-    /**
-     * Product ID.
-     */
-    id: number | null;
+	/**
+	 * Product ID.
+	 */
+	id: number | null;
 
-    /**
-     * Product title.
-     */
-    title: string;
+	/**
+	 * Product title.
+	 */
+	title: string;
 
-    /**
-     * Product description.
-     */
-    description: string;
+	/**
+	 * Product description.
+	 */
+	description: string;
 
-    /**
-     * Product Category ID.
-     */
-    category_id: number | null;
+	/**
+	 * Product Category IDs.
+	 */
+	category_ids: Array< number >;
 
-    /**
-     * Status published or draft
-     */
-    is_active: boolean | number;
+	/**
+	 * Status published or draft
+	 */
+	is_active: boolean | number;
 
-    /**
-     * Product image ID.
-     */
-    image_id: number | null;
+	/**
+	 * Product image ID.
+	 */
+	image_id: number | null;
 
-    /**
-     * Product gallery IDS.
-     */
-    gallery_ids: Array<number>;
+	/**
+	 * Product gallery IDS.
+	 */
+	gallery_ids: Array< number >;
 }
 
 export interface IProductFormData extends IProduct {}
 
 export interface IProductCategories {
-    /**
-     * Product type id.
-     */
-    id: number;
+	/**
+	 * Product type id.
+	 */
+	id: number;
 
-    /**
-     * Product type name.
-     */
-    name: string;
+	/**
+	 * Product type name.
+	 */
+	name: string;
 
-    /**
-     * Product type slug.
-     */
-    slug: string;
+	/**
+	 * Product type slug.
+	 */
+	slug: string;
 
-    /**
-     * Product type description.
-     */
-    description: string | null;
+	/**
+	 * Product type description.
+	 */
+	description: string | null;
 }

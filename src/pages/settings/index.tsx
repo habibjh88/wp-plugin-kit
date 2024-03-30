@@ -22,84 +22,79 @@ import { reducer, initialState } from './reducer';
  */
 const Settings = () => {
 	const queryClient = useQueryClient();
-	const [state, dispatch] = useReducer(reducer, initialState);
+	const [ state, dispatch ] = useReducer( reducer, initialState );
 	const { isLoading, isSaving, form } = state;
 
-	const { data, isLoading } = useQuery({
-		queryKey: ['settings'],
-		queryFn: () => get('settings', 'tab=general'),
-	});
+	const { data } = useQuery( {
+		queryKey: [ 'settings' ],
+		queryFn: () => get( 'settings', 'tab=general' ),
+	} );
 
-	useEffect(() => {
-		if (data) {
+	useEffect( () => {
+		if ( data ) {
 			const { form } = data;
-			dispatch({ type: 'set_form', payload: form });
+			dispatch( { type: 'set_form', payload: form } );
 		}
-	}, [data]);
+	}, [ data ] );
 
-	useEffect(() => {
-		dispatch({ type: 'set_isLoading', payload: isLoading });
-	}, [isLoading]);
+	useEffect( () => {
+		dispatch( { type: 'set_isLoading', payload: isLoading } );
+	}, [ isLoading ] );
 
-	const submitMutation = useMutation({
-		mutationFn: () => add('settings', { ...form, tab: 'general' }),
+	const submitMutation = useMutation( {
+		mutationFn: () => add( 'settings', { ...form, tab: 'general' } ),
 		onSuccess: () => {
-			toast.success(__('Successfully Changed', 'wp-plugin-kit'));
-			queryClient.invalidateQueries({ queryKey: ['settings'] });
-			dispatch({ type: 'set_isSaving', payload: false });
+			toast.success( __( 'Successfully Changed', 'wp-plugin-kit' ) );
+			queryClient.invalidateQueries( { queryKey: [ 'settings' ] } );
+			dispatch( { type: 'set_isSaving', payload: false } );
 		},
 		onError: () => {
-			dispatch({ type: 'set_isSaving', payload: false });
+			dispatch( { type: 'set_isSaving', payload: false } );
 		},
-	});
+	} );
 
-	const handleChange = (e: any) => {
+	const handleChange = ( e: any ) => {
 		const { name, value } = e.target;
-		dispatch({ type: 'set_form', payload: { ...form, [name]: value } });
+		dispatch( { type: 'set_form', payload: { ...form, [ name ]: value } } );
 	};
 
-	const handleChangeSwitch = (name: string, value: string) => {
-		dispatch({ type: 'set_form', payload: { ...form, [name]: value } });
+	const handleChangeSwitch = ( name: string, value: string ) => {
+		dispatch( { type: 'set_form', payload: { ...form, [ name ]: value } } );
 	};
 
 	const handleSubmit = async () => {
-		dispatch({ type: 'set_isSaving', payload: true });
+		dispatch( { type: 'set_isSaving', payload: true } );
 		submitMutation.mutate();
 	};
 
 	return (
 		<>
-			<Topbar
-				label={__(
-					'Settings',
-					'wp-plugin-kit'
-				)}
-			>
-				{!isLoading && (
+			<Topbar label={ __( 'Settings', 'wp-plugin-kit' ) }>
+				{ ! isLoading && (
 					<button
-						onClick={handleSubmit}
+						onClick={ handleSubmit }
 						className="wp-plugin-kit-submit"
-						disabled={isSaving}
+						disabled={ isSaving }
 					>
-						{__('Save Changes', 'wp-plugin-kit')}
+						{ __( 'Save Changes', 'wp-plugin-kit' ) }
 					</button>
-				)}
+				) }
 			</Topbar>
 
 			<PageContent>
-				{isLoading && <Spinner />}
+				{ isLoading && <Spinner /> }
 
-				{!isLoading && (
+				{ ! isLoading && (
 					<div className="wp-plugin-kit-settings wp-plugin-kit-form">
 						<div className="wp-plugin-kit-field">
-							<label>{__('Layout', 'wp-plugin-kit')}</label>
+							<label>{ __( 'Layout', 'wp-plugin-kit' ) }</label>
 							<div className="wp-plugin-kit-field-img-switch">
 								<button
 									type="button"
 									name="layout"
 									value="one"
-									onClick={() =>
-										handleChangeSwitch('layout', 'one')
+									onClick={ () =>
+										handleChangeSwitch( 'layout', 'one' )
 									}
 									className={
 										form.layout === 'one' ? 'selected' : ''
@@ -114,8 +109,8 @@ const Settings = () => {
 									type="button"
 									name="layout"
 									value="two"
-									onClick={() =>
-										handleChangeSwitch('layout', 'two')
+									onClick={ () =>
+										handleChangeSwitch( 'layout', 'two' )
 									}
 									className={
 										form.layout === 'two' ? 'selected' : ''
@@ -130,43 +125,43 @@ const Settings = () => {
 						</div>
 
 						<div className="wp-plugin-kit-field">
-							<label>{__('Position', 'wp-plugin-kit')}</label>
+							<label>{ __( 'Position', 'wp-plugin-kit' ) }</label>
 							<div className="wp-plugin-kit-field-button-switch">
 								<button
 									type="button"
 									name="position"
 									value="top"
-									onClick={handleChange}
+									onClick={ handleChange }
 									className={
 										form.position === 'top'
 											? 'selected'
 											: ''
 									}
 								>
-									{__('Top', 'wp-plugin-kit')}
+									{ __( 'Top', 'wp-plugin-kit' ) }
 								</button>
 								<button
 									type="button"
 									name="position"
 									value="bottom"
-									onClick={handleChange}
+									onClick={ handleChange }
 									className={
 										form.position === 'bottom'
 											? 'selected'
 											: ''
 									}
 								>
-									{__('Bottom', 'wp-plugin-kit')}
+									{ __( 'Bottom', 'wp-plugin-kit' ) }
 								</button>
 							</div>
 						</div>
 
 						<div className="wp-plugin-kit-field">
 							<label>
-								{__(
+								{ __(
 									'Close After (Seconds)',
 									'wp-plugin-kit'
-								)}
+								) }
 							</label>
 							<div className="wp-plugin-kit-field-range">
 								<input
@@ -174,27 +169,29 @@ const Settings = () => {
 									min="1"
 									max="20"
 									name="close_after"
-									value={form.close_after}
-									onChange={handleChange}
+									value={ form.close_after }
+									onChange={ handleChange }
 									className="range-slider"
-									style={{
-										background: `linear-gradient(to right, #3264fe ${(form.close_after / 20) * 100
-											}%, #ccd6ff ${(form.close_after / 20) * 100
-											}%)`,
-									}}
+									style={ {
+										background: `linear-gradient(to right, #3264fe ${
+											( form.close_after / 20 ) * 100
+										}%, #ccd6ff ${
+											( form.close_after / 20 ) * 100
+										}%)`,
+									} }
 								/>
 								<input
 									type="number"
 									min="1"
 									max="20"
 									name="close_after"
-									value={form.close_after}
-									onChange={handleChange}
+									value={ form.close_after }
+									onChange={ handleChange }
 								/>
 							</div>
 						</div>
 					</div>
-				)}
+				) }
 			</PageContent>
 		</>
 	);
