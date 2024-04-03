@@ -1,5 +1,5 @@
 /**
- * Global variable declarion for typescirpt
+ * Global variable declaration for TypeScript
  *
  * @since 0.1.0
  */

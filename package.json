@@ -2,7 +2,7 @@
 	"name": "wp-plugin-kit",
 	"version": "0.1.0",
 	"description": "A starter plugin for WordPress that provides a foundational structure to build upon.",
-	"author": "WpPluginKit <therakib7@gmail.com>",
+	"author": "Rakib <therakib7@gmail.com>",
 	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"WordPress",

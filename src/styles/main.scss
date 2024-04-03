@@ -4,25 +4,24 @@
 @import 'partials/tailwind';
 
 /**
-  * Default CSS Override
-  */
+ * Default CSS Override
+ */
 @import 'partials/default';
 
 /**
-  * Default Preloader CSS
-  */
+ * Default Preloader CSS
+ */
 @import 'partials/preloader';
 
 /**
-  * Default Form CSS
-  */
+ * Default Form CSS
+ */
 @import 'partials/form';
 
 /**
-  * Internal CSS
-  */
+ * Internal CSS
+ */
 .wp-admin.wp-plugin-kit {
-
 	.wp-plugin-kit-topbar {
 		position: sticky;
 		top: 32px;

@@ -23,41 +23,41 @@ const url = ( api: string, from: string ) => {
 };
 
 export const get = async ( api: string, args = '', from = 'free' ) => {
-	const resp = await apiFetch( {
+	const response = await apiFetch( {
 		path: `${ url( api, from ) }/?${ args }`,
 	} );
 
-	if ( resp.success ) {
-		return resp.data;
+	if ( response.success ) {
+		return response.data;
 	}
 
-	throw resp.data.map( ( value: string ) => new Error( value ) );
+	throw response.data.map( ( value: string ) => new Error( value ) );
 };
 
 export const getSingle = async ( api: string, id: number, from = 'free' ) => {
-	const resp = await apiFetch( {
+	const response = await apiFetch( {
 		path: `${ url( api, from ) }/${ id }`,
 	} );
 
-	if ( resp.success ) {
-		return resp.data;
+	if ( response.success ) {
+		return response.data;
 	}
 
-	throw resp.data.map( ( value: string ) => new Error( value ) );
+	throw response.data.map( ( value: string ) => new Error( value ) );
 };
 
 export const add = async ( api: string, data: object, from = 'free' ) => {
-	const resp = await apiFetch( {
+	const response = await apiFetch( {
 		path: `${ url( api, from ) }`,
 		method: 'POST',
 		data,
 	} );
 
-	if ( resp.success ) {
-		return resp.data;
+	if ( response.success ) {
+		return response.data;
 	}
 
-	throw resp.data.map( ( value: string ) => new Error( value ) );
+	throw response.data.map( ( value: string ) => new Error( value ) );
 };
 
 export const edit = async (
@@ -66,28 +66,28 @@ export const edit = async (
 	data: object,
 	from = 'free'
 ) => {
-	const resp = await apiFetch( {
+	const response = await apiFetch( {
 		path: `${ url( api, from ) }/${ id }`,
 		method: 'PUT',
 		data,
 	} );
 
-	if ( resp.success ) {
-		return resp.data;
+	if ( response.success ) {
+		return response.data;
 	}
 
-	throw resp.data.map( ( value: string ) => new Error( value ) );
+	throw response.data.map( ( value: string ) => new Error( value ) );
 };
 
 export const del = async ( api: string, id: string, from = 'free' ) => {
-	const resp = await apiFetch( {
+	const response = await apiFetch( {
 		path: `${ url( api, from ) }/${ id }`,
 		method: 'DELETE',
 	} );
 
-	if ( resp.success ) {
-		return resp.data;
+	if ( response.success ) {
+		return response.data;
 	}
 
-	throw resp.data.map( ( value: string ) => new Error( value ) );
+	throw response.data.map( ( value: string ) => new Error( value ) );
 };
