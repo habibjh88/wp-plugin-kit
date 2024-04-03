@@ -1,54 +1,54 @@
 {
-	"name": "therakib7/wp-plugin-kit",
-	"version": "0.1.0",
-	"description": "A starter plugin for WordPress that provides a foundational structure to build upon.",
-	"type": "wordpress-plugin",
-	"license": "GPL-2.0-or-later",
-	"authors": [
-		{
-			"name": "Rakib",
-			"email": "therakib7@gmail.com"
-		}
-	],
-	"repositories": [
-		{
-			"type": "git",
-			"url": "https://github.com/therakib7/wp-plugin-kit.git"
-		}
-	],
-	"require": {
-		"php": "^7.4 || ^8.0"
-	},
-	"require-dev": {
-		"wp-coding-standards/wpcs": "^3.0",
-		"phpcompatibility/phpcompatibility-wp": "dev-master",
-		"wp-phpunit/wp-phpunit": "dev-master",
-		"yoast/phpunit-polyfills": "^1.0"
-	},
-	"autoload": {
-		"psr-4": {
-			"Therakib7\\WpPluginKit\\": "includes/",
-			"Therakib7\\WpPluginKit\\Tests\\": "tests/phpunit/"
-		}
-	},
-	"scripts": {
-		"phpcs": [
-			"phpcs -ps"
-		],
-		"phpcs:fix": [
-			"phpcbf -p"
-		],
-		"test": [
-			"phpunit"
-		],
-		"test:all": [
-			"phpcs -ps & phpunit"
-		]
-	},
-	"minimum-stability": "dev",
-	"config": {
-		"allow-plugins": {
-			"dealerdirect/phpcodesniffer-composer-installer": true
-		}
-	}
+    "name": "therakib7/wp-plugin-kit",
+    "version": "0.1.0",
+    "description": "A starter plugin for WordPress that provides a foundational structure to build upon.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Rakib",
+            "email": "therakib7@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/therakib7/wp-plugin-kit.git"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0"
+    },
+    "require-dev": {
+        "wp-coding-standards/wpcs": "^3.0",
+        "phpcompatibility/phpcompatibility-wp": "dev-master",
+        "wp-phpunit/wp-phpunit": "dev-master",
+        "yoast/phpunit-polyfills": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Therakib7\\WpPluginKit\\": "includes/",
+            "Therakib7\\WpPluginKit\\Tests\\": "tests/phpunit/"
+        }
+    },
+    "scripts": {
+        "phpcs": [
+            "phpcs -ps"
+        ],
+        "phpcs:fix": [
+            "phpcbf -p"
+        ],
+        "test": [
+            "phpunit"
+        ],
+        "test:all": [
+            "phpcs -ps & phpunit"
+        ]
+    },
+    "minimum-stability": "dev",
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
 }
