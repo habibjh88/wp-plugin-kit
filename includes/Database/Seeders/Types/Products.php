@@ -50,7 +50,7 @@ class Products extends DBSeeder {
 
         $table_name_with_prefix = "{$wpdb->prefix}{$prefix}" . self::$table_name;
 
-        foreach ($products as $product) {
+        foreach ( $products as $product ) {
             $wpdb->insert(
                 $table_name_with_prefix,
                 $product

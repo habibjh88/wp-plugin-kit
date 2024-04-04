@@ -32,7 +32,7 @@ class ProductCategories extends DBMigrator {
         global $wpdb;
 
         $charset_collate = $wpdb->get_charset_collate();
-        
+
         $prefix = Keys::PREFIX;
 
         $table_name_with_prefix = "{$wpdb->prefix}{$prefix}" . self::$table_name;

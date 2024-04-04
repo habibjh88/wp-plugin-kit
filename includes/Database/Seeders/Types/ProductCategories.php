@@ -12,8 +12,8 @@ use Therakib7\WpPluginKit\Helpers\Keys;
  *
  * @since 0.1.0
  */
-class ProductCategories extends DBSeeder
-{
+class ProductCategories extends DBSeeder {
+
 
     /**
      * Name of seeder table.
@@ -31,15 +31,14 @@ class ProductCategories extends DBSeeder
      *
      * @return void
      */
-    public function run()
-    {
+    public function run() {
         global $wpdb;
 
         // Common data
         $common_data = [
             'created_by' => get_current_user_id(),
-            'created_at' => current_datetime()->format('Y-m-d H:i:s'),
-            'updated_at' => current_datetime()->format('Y-m-d H:i:s'),
+            'created_at' => current_datetime()->format( 'Y-m-d H:i:s' ),
+            'updated_at' => current_datetime()->format( 'Y-m-d H:i:s' ),
         ];
 
         // Generate some product_categories.
@@ -63,19 +62,19 @@ class ProductCategories extends DBSeeder
         ];
 
         // Merge common data with each product category
-        foreach ($product_categories as &$category) {
-            $category = array_merge($category, $common_data);
+        foreach ( $product_categories as &$category ) {
+            $category = array_merge( $category, $common_data );
         }
 
         // Unset reference to last element to avoid potential conflicts
-        unset($category);
+        unset( $category );
 
         // Create each of the product_categories.
         $prefix = Keys::PREFIX;
 
         $table_name_with_prefix = "{$wpdb->prefix}{$prefix}" . self::$table_name;
 
-        foreach ($product_categories as $product_category) {
+        foreach ( $product_categories as $product_category ) {
             $wpdb->insert(
                 $table_name_with_prefix,
                 $product_category

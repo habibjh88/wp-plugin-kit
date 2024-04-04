@@ -34,7 +34,7 @@ class Products extends DBMigrator {
         $charset_collate = $wpdb->get_charset_collate();
 
         $prefix = Keys::PREFIX;
-        
+
         $table_name_with_prefix = "{$wpdb->prefix}{$prefix}" . self::$table_name;
 
         $schema_products = "CREATE TABLE IF NOT EXISTS `{$table_name_with_prefix}` (
