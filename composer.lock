@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb167c4a23d07d9a66ebd63ecd9242bd",
+    "content-hash": "37abdf60158e185eb8d21e5f9cdc32d8",
     "packages": [],
     "packages-dev": [
         {
@@ -87,32 +87,31 @@
         },
         {
             "name": "doctrine/instantiator",
-            "version": "2.0.x-dev",
+            "version": "1.5.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/instantiator.git",
-                "reference": "6c0ee619435c5d4f3bc515ab1514cf4cf1006c6e"
+                "reference": "12be2483e1f0e850b353e26869e4e6c038459501"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/6c0ee619435c5d4f3bc515ab1514cf4cf1006c6e",
-                "reference": "6c0ee619435c5d4f3bc515ab1514cf4cf1006c6e",
+                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/12be2483e1f0e850b353e26869e4e6c038459501",
+                "reference": "12be2483e1f0e850b353e26869e4e6c038459501",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.1"
+                "php": "^7.1 || ^8.0"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^12",
+                "doctrine/coding-standard": "^9 || ^12",
                 "ext-pdo": "*",
                 "ext-phar": "*",
-                "phpbench/phpbench": "^1.2",
-                "phpstan/phpstan": "^1.9.4",
-                "phpstan/phpstan-phpunit": "^1.3",
-                "phpunit/phpunit": "^10.5",
-                "vimeo/psalm": "^5.4"
+                "phpbench/phpbench": "^0.16 || ^1",
+                "phpstan/phpstan": "^1.4",
+                "phpstan/phpstan-phpunit": "^1",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.6",
+                "vimeo/psalm": "^4.30 || ^5.4"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -138,7 +137,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/instantiator/issues",
-                "source": "https://github.com/doctrine/instantiator/tree/2.0.x"
+                "source": "https://github.com/doctrine/instantiator/tree/1.5.x"
             },
             "funding": [
                 {
@@ -154,7 +153,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-12-09T14:19:21+00:00"
+            "time": "2023-12-09T14:16:53+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -1078,12 +1077,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "5378382017ced87e600e79919bcd3009317f0baa"
+                "reference": "452df670ecd903905905a2fed00447e0f57df1af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/5378382017ced87e600e79919bcd3009317f0baa",
-                "reference": "5378382017ced87e600e79919bcd3009317f0baa",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/452df670ecd903905905a2fed00447e0f57df1af",
+                "reference": "452df670ecd903905905a2fed00447e0f57df1af",
                 "shasum": ""
             },
             "require": {
@@ -1173,7 +1172,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-03-23T07:30:30+00:00"
+            "time": "2024-04-04T07:49:41+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -2338,19 +2337,18 @@
         },
         {
             "name": "wp-phpunit/wp-phpunit",
-            "version": "dev-master",
+            "version": "6.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-phpunit/wp-phpunit.git",
-                "reference": "5ff446df7879b3b234db8e07f357323320dce54d"
+                "reference": "4368fd1dd37d0314cbaa9040be39d835616aeb17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-phpunit/wp-phpunit/zipball/5ff446df7879b3b234db8e07f357323320dce54d",
-                "reference": "5ff446df7879b3b234db8e07f357323320dce54d",
+                "url": "https://api.github.com/repos/wp-phpunit/wp-phpunit/zipball/4368fd1dd37d0314cbaa9040be39d835616aeb17",
+                "reference": "4368fd1dd37d0314cbaa9040be39d835616aeb17",
                 "shasum": ""
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "files": [
@@ -2452,8 +2450,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "phpcompatibility/phpcompatibility-wp": 20,
-        "wp-phpunit/wp-phpunit": 20
+        "phpcompatibility/phpcompatibility-wp": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

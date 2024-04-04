@@ -50,9 +50,11 @@ class SettingsTest extends WP_UnitTestCase {
     /**
      * Settings request api exist
      *
+     * Add prefix test_ before function name like  test_settings_endpoint_exists
+     *
      * @since 0.1.0
      */
-    public function test_users_endpoint_exists() {
+    public function settings_endpoint_exists() {
         $endpoint = '/' . $this->namespace . '/' . $this->base;
 
         $request  = new WP_REST_Request( 'GET', $endpoint );
@@ -61,5 +63,15 @@ class SettingsTest extends WP_UnitTestCase {
 
         $this->assertEquals( 200, $response->get_status() );
 	}
+
+    /**
+     * Test addition
+     *
+     * @since 0.1.0
+     */
+    public function test_addition() {
+        $result = 2 + 2;
+        $this->assertEquals(4, $result);
+    }
 
 }

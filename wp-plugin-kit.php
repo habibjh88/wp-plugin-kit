@@ -5,7 +5,7 @@
  * @package    WpPluginKit - WpPluginKit
  * @author     WpPluginKit <therakib7@gmail.com>
  * @link       https://therakib7.com
- * @copyright  2023 WpPluginKit
+ * @copyright  2024 WpPluginKit
  *
  * @wordpress-plugin
  * Plugin Name:       WP Plugin Kit

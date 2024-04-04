@@ -1,4 +1,5 @@
 name: PHPCS check
+
 on:
     pull_request:
     push:
@@ -12,14 +13,14 @@ concurrency:
 
 jobs:
     phpcs:
-        name: PHPCS check
+        name: Run PHPCS checks
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
               uses: actions/checkout@v3
 
             - name: Setup PHP
-              uses: 'shivammathur/setup-php@v2'
+              uses: shivammathur/setup-php@v2
               with:
                   php-version: '7.4'
                   ini-values: 'memory_limit=1G'
@@ -27,11 +28,11 @@ jobs:
                   tools: cs2pr
 
             - name: Install Composer dependencies
-              uses: 'ramsey/composer-install@v2'
+              run: composer update
 
             - name: Run PHPCS checks
-              continue-on-error: true
-              run: composer run phpcs --report-checkstyle=./phpcs-report.xml
+              run: composer run phpcs -- --report=checkstyle > phpcs-report.xml
 
             - name: Show PHPCS results in PR
-              run: cs2pr ./phpcs-report.xml
+              if: ${{ always() && steps.phpcs.outcome == 'failure' }}
+              run: cs2pr phpcs-report.xml
