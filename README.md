@@ -107,13 +107,51 @@ composer run phpcs
 **Fix all errors of the project:**
 
 ```sh
-composer run phpcbf
+composer run phpcs:fix
 ```
 
 **Full Composer test run:**
 
 ```sh
 composer run test:all
+```
+
+### Others Coding Standards
+
+**Format code according to WordPress standards:**
+
+```sh
+npm run format
+```
+
+**Linting JavaScript:**
+
+```sh
+npm run lint:js
+```
+
+**Linting CSS:**
+
+```sh
+npm run lint:css
+```
+
+**Linting Markdown (Docs):**
+
+```sh
+npm run lint:md:docs
+```
+
+**To Update NPM Packages:**
+
+```sh
+npm run packages-update
+```
+
+**Ensure licenses compatibility:**
+
+```sh
+npm run check-licenses
 ```
 
 ### Run Playwright e2e Test
